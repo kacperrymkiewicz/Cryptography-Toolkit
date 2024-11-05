@@ -37,30 +37,30 @@ namespace CaesarCipherApp
         {
             while (true)
             {
-                Console.WriteLine("Wybierz opcję:");
-                Console.WriteLine("1. Szyfruj tekst");
-                Console.WriteLine("2. Odszyfruj tekst");
+                Console.WriteLine("Choose an option:");
+                Console.WriteLine("1. Encrypt text");
+                Console.WriteLine("2. Decrypt text");
                 string option = Console.ReadLine();
 
-                Console.WriteLine("Podaj tekst:");
+                Console.WriteLine("Enter the text:");
                 string text = Console.ReadLine();
 
-                Console.WriteLine("Podaj klucz:");
+                Console.WriteLine("Enter the key:");
                 int shift = int.Parse(Console.ReadLine());
 
                 if (option == "1")
                 {
                     string encryptedText = Encrypt(text, shift);
-                    Console.WriteLine($"Zaszyfrowany tekst: {encryptedText}");
+                    Console.WriteLine($"Encrypted text: {encryptedText}");
                 }
                 else if (option == "2")
                 {
                     string decryptedText = Decrypt(text, shift);
-                    Console.WriteLine($"Odszyfrowany tekst: {decryptedText}");
+                    Console.WriteLine($"Decrypted text: {decryptedText}");
                 }
                 else
                 {
-                    Console.WriteLine("Nieprawidłowa opcja");
+                    Console.WriteLine("Invalid option");
                 }
 
                 Console.WriteLine();
