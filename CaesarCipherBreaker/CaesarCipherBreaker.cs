@@ -48,21 +48,24 @@ namespace CaesarCipherBreaker
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Podaj zaszyfrowany tekst:");
-            string text = Console.ReadLine();
-
-            Console.WriteLine("Podaj liczbę najbardziej prawdopodobnych kombinacji do wyświetlenia (do 10):");
-            int topResults;
-            while (!int.TryParse(Console.ReadLine(), out topResults) || topResults < 1 || topResults > 10)
+            while(true)
             {
-                Console.WriteLine("Podaj liczbę z zakresu od 1 do 10:");
-            }
+                Console.WriteLine("Podaj zaszyfrowany tekst:");
+                string text = Console.ReadLine();
 
-            List<string> decryptions = BreakCipher(text, topResults);
-            Console.WriteLine("Najbardziej prawdopodobne odszyfrowane teksty:");
-            for (int i = 0; i < decryptions.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {decryptions[i]}");
+                Console.WriteLine("Podaj liczbę najbardziej prawdopodobnych kombinacji do wyświetlenia (do 10):");
+                int topResults;
+                while (!int.TryParse(Console.ReadLine(), out topResults) || topResults < 1 || topResults > 10)
+                {
+                    Console.WriteLine("Podaj liczbę z zakresu od 1 do 10:");
+                }
+
+                List<string> decryptions = BreakCipher(text, topResults);
+                Console.WriteLine("Najbardziej prawdopodobne odszyfrowane teksty:");
+                for (int i = 0; i < decryptions.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {decryptions[i]}");
+                }
             }
         }
 
