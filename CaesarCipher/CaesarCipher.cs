@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CaesarCipherApp
 {
-    internal class CaesarCipher
+    public class CaesarCipher
     {
         public static string Encrypt(string text, int key)
         {
